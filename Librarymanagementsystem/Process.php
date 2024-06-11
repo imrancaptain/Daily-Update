@@ -1,5 +1,5 @@
 <?php
-$id = $_POST['student'];
-$name = $_POST['name'];
+$id = $_REQUEST['student'];
+$name = $_REQUEST['name'];
 echo "My id is $id <br/> And My name is {$name} "
 ?>
