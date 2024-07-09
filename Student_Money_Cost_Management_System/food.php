@@ -1,17 +1,12 @@
 <?php
-$id = $_REQUEST['student'];
-$username = $_REQUEST['name'];
-$email = $_REQUEST['email'];
+$date= $_REQUEST['date'];
+$fooditem= $_REQUEST['fooditem'];
 
-echo "Id is : $id <br/> And Username is : {$username} <br/> Email is : {$email} <br/>";
+$price= $_REQUEST['price'];
+$totalcost= $_REQUEST['totalcost'];
+echo "Date  is : $date <br/>Food Item  is : $fooditem <br/> And Price is : {$price}  <br/> Total cost is : {$totalcost} <br/>";
 session_start();
-$host ='localhost';
-$user ='root';
-$pass ='';
-$dbname ='login';
-$conn= mysqli_connect($host,$user,$pass,$dbname);
-$sql = "INSERT INTO validation(id,name)values ('$id','$username','$email)";
-mysqli_query($conn,$sql);
+
 
 function checkBorrowing($id, $username) {
     
@@ -40,23 +35,26 @@ function setBorrowCookie($id, $username) {
 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $id = $_POST['student'];
-    $username = $_POST['name'];
+    $date= $_POST['date'];
+    $fooditem = $_POST['fooditem'];
+    $price = $_POST['price'];
+     $totalcost = $_POST['totalcost'];
+
 
     
-    if (empty($id) || empty($username)) {
+    if (empty($date) ||empty($fooditem) ||  empty($price)|| empty($totalcost)) {
         $error = "ID and Username are required.";
     } else {
-        if (checkBorrowing($id, $username)) {
+        if (checkBorrowing($date,$fooditem, $price,$totalcost)) {
             $message = "Please wait 7 days before borrowing again with the same ID and username.";
         } else {
-            setBorrowCookie($id, $username);
-            $message = "You have successfully sing in!";
+            setBorrowCookie($date,$fooditem,$price,$totalcost);
+            $message = "Food Cost Details!";
         }
     }
 }
 if (isset($error)) {
-    echo "<p style='color: red;'>$error</p>";
+    echo "<p style='color: red;'>$error</p>"; 
 }
 
 if (isset($message)) {

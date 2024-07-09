@@ -1,21 +1,35 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h2> Student Money Cost Management System </h2>
+        <h2> Student Money Cost Managem</h2>
+        <fieldset>
+            <legend>Transportaion Cost Details</legend>
+        <form action ="transportation.php" method="post">
 
-        <form action="Process.php" method="post">
-        <a href="home.php">Back</a>
-            ID : <input type="text"  name="student"><br>
+               
+                
+            Souce: <input type="text"  name="source"><br>
             
-            Name : <input type="text"  name="name"><br>
-            Em@il : <input type="text"  name="email"><br>
-            <input type="submit"  value="Submit"><br>
-            
-            
+            Destination: <input type="text"  name="destination"><br>
+            Price: <input type="text"  name="price"><br>
+            Total Cost: <input type="text"  name="totalcost"><br>
+           
+            <label for="cars">Choose a car:</label>
+
+<select id="cars">
+  <option value="volvo">Bus</option>
+  <option value="saab">Auto</option>
+  <option value="opel">Riskshw</option>
+  <option value="audi">Audi</option> 
+</select>
 
 
-        </form>
-        
+</br>
+            <input type="submit"  value="Submit"><input type="reset"  value="Reset">
+            <a href="costdetails.html">Back</a>
+</form>
+    
+</fieldset>    
         
     </body>
 </html>

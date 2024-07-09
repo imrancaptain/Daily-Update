@@ -3,19 +3,29 @@
     <body>
         <h2> Student Money Cost Management System </h2>
 
-        <form action="Process.php" method="post">
-        <a href="home.php">Back</a>
-            ID : <input type="text"  name="student"><br>
-            
-            Name : <input type="text"  name="name"><br>
-            Em@il : <input type="text"  name="email"><br>
-            <input type="submit"  value="Submit"><br>
-            
+        <form action="food.php" method="post">
+       
+        <fieldset>Date : <input type="date" id="date" name="date" required><br><br>
+            <legend>Food Cost Details</legend>
+        Food Item Name : <input type="text"  name="fooditem"><br>
+        
+        
+        Price: <input type="text"  name="price"><br>
+        Total Cost: <input type="text"  name="totalcost"><br>
+       
+        
+</select>
+
+
+</br>
+        <input type="submit"  value="Submit"><input type="reset"  value="Reset">
+        
+
             
 
 
         </form>
-        
+        <a href="costdetails.html">Back</a>
         
     </body>
 </html>
